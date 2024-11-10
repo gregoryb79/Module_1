@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quadratics Worksheet Generator</title>
+
+    <style>
+        /* Text Sizes */
+        h1{text-align: center; font-size: 3vw;} /* makes it addaptive to 3% of view field */
+        h2{font-size: 1.6vw;} /* makes it addaptive to 1.6% of view field */
+        p{font-size: 1.2vw;} /* makes it addaptive to 1.2% of view field */
+    </style>
+
+    <!--TeX library-->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript"
+        src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+
+    <script>
+    function generateQuadraticEquation() {
+        let equations = [];
+        let solutions = [];
+        for (let i = 0; i < 10; i++) {
+            // Generate two random non zero different integer roots from -10 to 10 
+            let root1 = 1;
+            let root2 = 1;
+           while ((root1 == root2) || (root1 == 0) || (root2 == 0)) {
+                root1 = Math.floor(Math.random()*21)-10;
+                root2 = Math.floor(Math.random()*21)-10;
+            }
+                    
+        
+            // Generate a random integer for 'a' (excluding 0 and 1)
+            let a = 1;
+            while ((a == 1) || (a == 0)) {
+                a = Math.floor(Math.random() * 21) - 10;  
+            }
+            
+        
+            // Calculate the coefficients 'b' and 'c'
+            let b = -a * (root1 + root2);
+            let c = a * root1 * root2;
+        
+            //Generate a1 and a2
+            let a1 = a - Math.floor(a * Math.random())      
+            let a2 = a - a1
+            
+            //Generate b1 and b2
+            let b1 = b - Math.floor(b * Math.random())      
+            let b2 = b - b1
+            
+            
+            // Variate quadratic equations by types
+            let equation =  [];
+            let counter = i + 1;
+            let eq_type = Math.floor(Math.random() * 3); // Generates random integer from 0 to 2
+            switch (eq_type) {
+            case 0:
+                equation = `$$${counter})x(${a1}x + ${b1}) = -x(${a2}x + ${b2}) - ${c}$$`; //a little rearangement
+                break;
+            case 1: 
+                equation = `$$${counter})x + \\frac{${a2}x^2 +${c}}{${a1}x+${b1}} = -\\frac{${b2}x}{${a1}x+${b1}}$$`;  //some common denominator work required
+                break;
+            case 2:
+                equation = `$$${counter}) x + \\frac{${a2}x^2}{${a1}x+${b1}} = \\frac{-${c}}{${a1}x+${b1}}-\\frac{${b2}x}{${a1}x+${b1}}$$`; //some common denominator work required other kind
+                break;
+            default:
+                equation = `$$${0} ${a}x^2 + ${b}x + ${c} = 0$$`; //basic quadratic equation
+                break;
+            }
+
+            let roots = [];
+            roots = `$$(${counter})(${root1},${root2})$$`;
+            
+            
+            //basic quadratic equation: `$$${a}x^2 + ${b}x + ${c} = 0$$`;
+            //a little rearangement: `$$x(${a1}x + ${b1}) = -x(${a2}x + ${b2}) - ${c}$$`;
+            //some common denominator work required = `$$x + \\frac{${a2}x^2 +${c}}{${a1}x+${b1}} = -\\frac{${b2}x}{${a1}x+${b1}}$$`
+            //some common denominator work required other kind = `$$x + \\frac{${a2}x^2}{${a1}x+${b1}} = \\frac{-${c}}{${a1}x+${b1}}-\\frac{${b2}x}{${a1}x+${b1}}$$` 
+            equations.push(equation);                   
+            solutions.push(roots);
+            
+            
+        }    
+        document.getElementById('equations').innerHTML = equations.join();
+        document.getElementById('solutions').innerHTML = solutions.join();
+    }
+
+    </script>
+
+</head>
+
+<body>
+       
+    <p>Here the equations to solve:</p>
+    <div id="equations"></div>
+    <p>To get the solution use the formula: $$ x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$</p>
+
+    <p>The answers are:</p>
+    <div id="solutions"></div>
+   
+    <script>
+        generateQuadraticEquation();
+    </script>
+  </body>
+  </html>
