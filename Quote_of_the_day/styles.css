@@ -1,7 +1,7 @@
 
 /* Text Sizes */
 h1 {
-    font-size: 4vw; /* makes it addaptive to 3% of view field */
+    font-size: calc(2rem + 1vw); /* makes it 2rem and addaptive to 0.5% of view field */
     font-family: sans-serif;
     text-align: center;
     font-style: normal;
@@ -10,7 +10,7 @@ h1 {
 
 
 h2 {
-    font-size: 1.6vw; /* makes it addaptive to 1.6% of view field */
+    font-size: 1.5rem; /* makes it addaptive to 1.6% of view field */
     font-family: sans-serif;
     text-align: left;
     font-style: normal;
@@ -22,13 +22,13 @@ body {
 }
 
 p {
-    font-size: 1.5vw; /* makes it addaptive to 1.5% of view field */
+    font-size: 1rem; /* makes it addaptive to 1.5% of view field */
     font-family: system-ui;
 }
 
 .quote_paragraph {
     font-family: cursive;
-    font-size: 1.8vw;
+    font-size: 2rem;
     font-style: italic, bold;
     text-align: left;
     background-color: antiquewhite;
@@ -37,12 +37,12 @@ p {
 
 .caption_style {
     font-family: David;
-    font-size: 2vw;
+    font-size: 1.5rem;
 }
 
 .translation {
     font-family: system-ui;
-    font-size: 1.8vw;
+    font-size: 1.5rem;
     font-style: normal;
     text-align: left;
 }
