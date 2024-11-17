@@ -32,6 +32,7 @@ p {
     font-style: italic, bold;
     text-align: left;
     background-color: antiquewhite;
+    /*background-color: hsl(34, 78%, 91%); the same color in hsl*/
 }
 
 .caption_style {
