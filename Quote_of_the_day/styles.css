@@ -1,29 +1,54 @@
+
+/* Text Sizes */
+h1 {
+    font-size: 4vw; /* makes it addaptive to 3% of view field */
+    font-family: sans-serif;
+    text-align: center;
+    font-style: normal;
+    text-decoration: underline;
+} 
+
+
+h2 {
+    font-size: 1.6vw; /* makes it addaptive to 1.6% of view field */
+    font-family: sans-serif;
+    text-align: left;
+    font-style: normal;
+    text-decoration: underline;
+} 
+
 body {
     text-align: center;
 }
 
-h2 {
-    font-family: sans-serif;
-}
-
-ul {
-    width: 30ch;
-    margin: auto;
-    text-align: left;
-}
-
 p {
+    font-size: 1.5vw; /* makes it addaptive to 1.5% of view field */
     font-family: system-ui;
 }
 
-.cool-paragraph {
+.quote_paragraph {
+    font-family: cursive;
+    font-size: 1.8vw;
+    font-style: italic, bold;
+    text-align: left;
+    background-color: antiquewhite;
+}
+
+.caption_style {
     font-family: David;
+    font-size: 2vw;
 }
 
-.bg-deeppink {
-    background: deeppink;
+.translation {
+    font-family: system-ui;
+    font-size: 1.8vw;
+    font-style: normal;
+    text-align: left;
 }
 
-#second-header {
-    font-size: 1.2rem;
+img {
+    width: 200px; /* Set a fixed width for images */
+    height: auto; /* Set an aout height for images, proportional to width */
+    display: block; /* Ensures images don't have extra space below them */
+    margin: auto;
 }
