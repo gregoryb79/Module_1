@@ -1,0 +1,33 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui;
+    background-color: orangered;
+}
+
+
+button {
+    height: auto;
+    width: auto;
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    background-color: cornflowerblue;
+    color: seashell;
+    border: 0.25rem solid currentColor;
+    margin: 20px;
+    // border-color: seashell;
+    border-radius: 1rem;
+    text-transform: uppercase;
+
+    &:hover{ //SCSS feature - "Nesting"
+        background-color: royalblue;
+    }
+    &:active{
+        background-color: seashell;
+        color: cornflowerblue;
+    }
+}
+
