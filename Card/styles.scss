@@ -27,12 +27,14 @@ p{
     text-decoration: none;
     font-size: 1rem;
     margin-left: 0.5rem; 
+    padding-bottom: 2rem;
 }
 
 
 .card_article{
     margin: auto;
-    width: 90ch; 
+    width: 80vw;
+    max-width: 90ch; 
 
     border-radius: 5px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
