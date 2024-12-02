@@ -1,31 +1,59 @@
-/* images formatting */
-figure {
-  display: inline-block;
-  /* Keeps the figure inline */
-  margin-top: 1rem;
-  margin-left: 20%;
-  width: 40rem;
-  text-align: center;
-  background-color: #f0f0f0;
-  border-radius: 2px;
-  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
-.card_image {
-  width: 40rem;
-  height: auto;
-  padding: 0;
-}
-
-.caption_style {
+/* Text formatting */
+h2 {
+  font-family: system-ui;
   text-align: left;
-  margin: 0.2rem;
+  font-style: normal;
+  text-decoration: none;
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
 }
-.caption_style h1 {
-  font-family: Arial;
+
+p {
+  font-family: system-ui;
+  text-align: left;
+  font-style: normal;
+  text-decoration: none;
   font-size: 1rem;
+  margin-left: 0.5rem;
 }
-.caption_style p {
-  font-family: Arial;
-  font-size: 0.8rem;
+
+.card_article {
+  margin: auto;
+  width: 90ch;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+.card_article figure {
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+.card_article .card_image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+.card_article .caption_style {
+  position: absolute;
+  bottom: 1rem;
+  left: 0.5rem;
+  font-family: system-ui;
+  text-align: left;
+  font-style: normal;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  color: white;
+}
+.card_article .caption_style .photo_reference {
+  color: white;
+}
+.card_article .caption_style .photo_reference:visited {
+  color: white;
 }
