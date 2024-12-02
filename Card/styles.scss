@@ -2,15 +2,6 @@
     box-sizing: border-box;
 }
 
-/* Text formatting */
-@mixin header-style($style){
-    font-family: system-ui;
-    text-align: center;
-    font-style: $style;
-    text-decoration: none;
-   }
-
-
 h2 {
     font-family: system-ui;
     text-align: left;
