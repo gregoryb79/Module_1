@@ -1,7 +1,3 @@
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
 /* images formatting */
 figure {
   display: inline-block;
