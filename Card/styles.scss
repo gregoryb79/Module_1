@@ -24,14 +24,14 @@ p{
 
 .card_article{
     margin: auto;
-    width: 80vw;
-    max-width: 90ch; 
+    width: 80vw; //width will be 80% of the page size
+    max-width: 90ch; //but not wider then 90ch
 
     border-radius: 5px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 
     figure {
-        position: relative;
+        position: relative; //so the figure will inherit the article size
         padding: 0;
         margin: 0;
     }
@@ -45,6 +45,7 @@ p{
      }
      
      .caption_style{
+       //putting caption in bottom left of the image 
        position: absolute;
        bottom: 1rem;
        left: 0.5rem;
@@ -58,9 +59,9 @@ p{
        color: white;
 
        .photo_reference{
-         color: white;
+         color: white; //making sure the links in the caption will be nice and white
             &:visited{
-             color: white;
+             color: white;//even if clicked
          }
        }
      }
