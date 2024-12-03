@@ -33,9 +33,7 @@
   box-shadow: 1px 1px 2px gray;
   cursor: pointer;
 }
-
-.toggle_frame::before {
-  content: " ";
+.toggle_frame .toggle_knob {
   position: absolute;
   left: 5px;
   top: 5px;
@@ -51,6 +49,6 @@
   transition: all 0.3s;
 }
 
-.toggle:checked + .toggle_frame::before {
+.toggle:checked + .toggle_frame .toggle_knob {
   left: calc(100% - 50px - 5px);
 }

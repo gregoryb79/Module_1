@@ -41,25 +41,27 @@ $button_y: 5%;
     box-shadow: $shadow_size $shadow_size $shadow_blur gray;
 
     cursor: pointer;
-}
 
-.toggle_frame::before{
-    content:' ';
-    position: absolute;
-    left: $margin;
-    top: $margin;
-    display: inline-block;
-    background: seashell;
-    width: $knob_diameter;
-    aspect-ratio: 1;
-    border: $border_width solid gray;
-    box-shadow: $shadow_size $shadow_size $shadow_blur gray;
-    border-radius: calc(#{$knob_diameter}/2);  
-    margin: 0;
-    padding: 0;     
-    transition: all 0.3s;  
-} 
+    .toggle_knob{
+        position: absolute;
+        left: $margin;
+        top: $margin;
+        display: inline-block;
+        background: seashell;
+        width: $knob_diameter;
+        aspect-ratio: 1;
+        border: $border_width solid gray;
+        box-shadow: $shadow_size $shadow_size $shadow_blur gray;
+        border-radius: calc(#{$knob_diameter}/2);  
+        margin: 0;
+        padding: 0;     
+        transition: all 0.3s;            
+    }
+ }
 
-.toggle:checked + .toggle_frame::before{
-    left: calc(100% - #{$knob_diameter} - #{$margin});        
-}
+  .toggle:checked + .toggle_frame .toggle_knob{
+    left: calc(100% - #{$knob_diameter} - #{$margin}); 
+  }
+
+
+
