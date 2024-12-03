@@ -1,0 +1,65 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+$knob_diameter: 50px;
+$margin: 5px;
+$border_width: 0px;
+$shadow_size: 1px;
+$shadow_blur: 2px;
+$button_x: 5%;
+$button_y: 5%;
+
+.toggle{
+    visibility: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.toggle_button{
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;   
+    left: $button_x; 
+    top: $button_y;
+}
+
+.toggle_frame{
+    position: absolute;   
+    left: 0; 
+    top: 0;
+    display: inline-block;
+    width: calc((#{$knob_diameter} * 2) + (#{$knob_diameter} / 4) + (#{$border_width})*2);
+    height: calc(#{$knob_diameter} + (#{$margin}*2)  + (#{$border_width}*2));
+    margin: 0;
+    padding: 0;
+    background: cornflowerblue;
+    border: $border_width solid gray;
+    border-radius: calc(#{$knob_diameter}/2 + #{$margin});
+    box-shadow: $shadow_size $shadow_size $shadow_blur gray;
+
+    cursor: pointer;
+}
+
+.toggle_frame::before{
+    content:' ';
+    position: absolute;
+    left: $margin;
+    top: $margin;
+    display: inline-block;
+    background: seashell;
+    width: $knob_diameter;
+    aspect-ratio: 1;
+    border: $border_width solid gray;
+    box-shadow: $shadow_size $shadow_size $shadow_blur gray;
+    border-radius: calc(#{$knob_diameter}/2);  
+    margin: 0;
+    padding: 0;     
+    transition: all 0.3s;  
+} 
+
+.toggle:checked + .toggle_frame::before{
+    left: calc(100% - #{$knob_diameter} - #{$margin});        
+}

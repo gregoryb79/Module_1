@@ -1,0 +1,34 @@
+<input type="checkbox" id="toggleSwitch" class="toggle">
+<label for="toggleSwitch" class="slider"></label>
+
+<style>
+  .toggle {
+    display: none; /* Hide the checkbox */
+  }
+  .slider {
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+    background: gray;
+    border-radius: 25px;
+    position: relative;
+    cursor: pointer;
+  }
+  .slider::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    top: 2.5px;
+    left: 2.5px;
+    transition: all 0.3s;
+  }
+  .toggle:checked + .slider {
+    background: green;
+  }
+  .toggle:checked + .slider::before {
+    left: 27.5px; /* Move the knob to the right */
+  }
+</style>
