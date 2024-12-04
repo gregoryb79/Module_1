@@ -1,0 +1,39 @@
+<!-- <input type="checkbox" id="exampleCheckbox">
+<label for="exampleCheckbox">I agree to the terms and conditions</label> -->
+
+<style>
+    .hidden-checkbox {
+    display: none; /* Hides the default checkbox */
+}
+
+.custom-label {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #333;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+}
+
+.hidden-checkbox:checked + .custom-label {
+    background-color: cornflowerblue;
+    border-color: cornflowerblue;
+}
+
+.hidden-checkbox:checked + .custom-label::after {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 7px;
+    width: 6px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+</style>
+<body>
+    <input type="checkbox" id="customCheckbox" class="hidden-checkbox">
+    <label for="customCheckbox" class="custom-label">Click Me</label>
+</body>
