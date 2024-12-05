@@ -1,0 +1,34 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.page_header {
+  margin: 1rem;
+}
+.page_header .top_menu {
+  border: 3px solid green;
+}
+.page_header .top_menu li {
+  display: inline;
+  margin-inline: 1rem;
+}
+
+.top_part {
+  margin: 1rem;
+  border: 3px solid blue;
+}
+.top_part li {
+  display: inline;
+  margin-inline: 1rem;
+}
+.top_part .photo_block {
+  margin: 1rem;
+  border: 3px solid orange;
+}
+.top_part .photo_block .my_photo {
+  height: 200px;
+  aspect-ratio: 1;
+  margin: auto;
+}
