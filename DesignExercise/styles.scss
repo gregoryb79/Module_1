@@ -1,0 +1,212 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    font-size: calc(4rem + 0.1vw);
+    text-align: center;
+}
+h2{
+    font-size: calc(2rem + 0.1vw);
+}
+
+body{
+    background-color: white;
+    border-radius: 4rem;
+    max-width: 80%;
+    margin: auto;    
+}
+
+.page_header{
+    margin-top: 1rem;
+    
+    .top_menu{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 4rem;
+        
+
+        .left_side{
+            li{
+                display: inline;
+                margin-inline: 1rem;
+            }
+            margin-left: 3rem;
+            margin-top: 3rem;
+            font-size: calc(0.5rem + 0.1vw);
+        }
+
+        .breadcrumbs{
+            margin-top: 3rem;
+        }
+
+       
+    }
+
+    article{
+        text-align: center;
+        max-width: 50%;
+        margin: auto;
+    }
+}
+
+.breadcrumbs{
+    li{
+       display: inline;       
+       &:not(:last-child)::after {
+            margin-inline: 0.5rem;
+            content: "/";
+        }
+        margin-inline-end: 0.5rem;        
+    }
+    margin-right: 3rem;
+    font-size: calc(0.8rem + 0.1vw);
+}
+
+// **** Buttons **** 
+.copy_button{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.shots_button{
+    position: relative;
+    --_font-size: 0.6rem;
+    font-size: calc(var(--_font-size) + 0.1vw);
+    color: seashell;
+    background-color: grey;
+    padding: calc(2 * var(--_font-size)) calc(3 * var(--_font-size));//calc(3 * var(--_font-size));
+    border-radius: 2rem;   
+}
+
+.email_button{
+    position: relative;
+    --_font-size: 0.7rem;
+    font-size: calc(var(--_font-size) + 0.1vw);
+    color: seashell;
+    background-color: grey;
+    padding: calc(1 * var(--_font-size)) calc(2 * var(--_font-size));//calc(3 * var(--_font-size));
+    border-radius: 2rem;   
+}
+
+.whatsapp_button{
+    position: relative;
+    --_font-size: 0.7rem;
+    font-size: calc(var(--_font-size) + 0.1vw);
+    color: seashell;
+    background-color: grey;
+    padding: calc(1 * var(--_font-size)) calc(2 * var(--_font-size));//calc(3 * var(--_font-size));
+    border-radius: 2rem;   
+}
+// ************************
+
+.photo_block{
+    --_photo-size: 200px;
+    margin: auto;
+    width: var(--_photo-size);;
+    aspect-ratio: 1;
+    text-align: center;
+    position: relative;
+
+    .my_photo_image{
+        height: var(--_photo-size);
+        aspect-ratio: 1; 
+        margin: auto;
+        display: block;
+        border-radius: 50%;  
+                        
+    }
+    .caption_style{
+        --_backgroundcolor: seashell;
+        position: absolute;
+        background-color: var(--_backgroundcolor);
+        border-radius: 1rem;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        padding-bottom: 0.2rem;
+        top: 4rem;
+        right: -6rem;
+        transform: rotate(-15deg);
+        a{
+            background-color: var(--_backgroundcolor);
+        }
+    }
+
+}
+
+.links_to_companies{
+    margin-top: 7rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.center_piece{
+
+    margin-top: 5rem;
+    p{
+        text-align: center;
+        font-size: calc(1.5rem + 0.1vw);
+        max-width: 50%;
+        margin: auto;
+    }
+
+    h3{
+        font-size: calc(0.5rem + 0.1vw);
+        display: flex;
+        justify-content: center;
+        transform: rotate(-15deg);
+        margin-top: 4rem;
+    }
+
+    .variations{
+        font-size: calc(0.6rem + 0.1vw);
+        margin-top: 1.5rem;
+        display: flex;
+        justify-content: space-around;
+        li{
+            max-width: 15%;
+        }
+    }
+}
+
+.page_footer{
+
+    // position: relative;
+
+    h1{
+        margin-top: 5rem;
+    }
+
+    h2{
+        text-align: center;
+        max-width: 50%;
+        margin: auto;
+        margin-bottom: 2rem;
+    }
+
+    .contacts_menu{
+        display: flex;
+        justify-content: center;
+        li{
+            margin-inline: 2rem;
+        }
+    }
+
+
+
+    nav{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 5rem;
+
+        p{
+            margin-left: 3rem;
+            font-size: calc(0.8rem + 0.1vw);
+        }
+    }
+
+    padding-bottom: 3rem;
+}
