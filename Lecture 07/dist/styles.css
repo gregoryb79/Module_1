@@ -1,0 +1,63 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+.item_card {
+  max-width: 40%;
+  max-height: 40%;
+  height: 30rem;
+  width: 25rem;
+  border: 3px solid red;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+}
+
+.item_tags {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-left: 1rem;
+  margin-top: 0.5rem;
+}
+.item_tags li {
+  border: 3px solid red;
+  border-radius: 6px;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+}
+
+footer {
+  background-color: bisque;
+  border: 2px solid brown;
+  border-radius: 6px;
+  padding-left: 1rem;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+main {
+  flex: 1;
+}
+
+.lorem_fill {
+  width: min(75ch, 60%);
+  margin: auto;
+}
+
+.chat_text {
+  width: 80%;
+}
