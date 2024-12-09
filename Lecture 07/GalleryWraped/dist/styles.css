@@ -1,0 +1,34 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  font-size: calc(3rem, + 0.1vw);
+  line-height: 1.5;
+  text-align: center;
+}
+
+img {
+  max-height: 100%;
+  max-width: 100%;
+  aspect-ratio: 1;
+}
+
+.wrapped_list {
+  max-width: 80vw;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.wrapped_list li {
+  flex: 1 1 250px;
+  gap: 1rem;
+  max-width: 250px;
+  min-width: 100px;
+  max-height: 250px;
+  min-height: 100px;
+}
