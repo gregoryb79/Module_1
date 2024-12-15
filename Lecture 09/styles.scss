@@ -1,0 +1,40 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+ul, ol, menu {
+    padding: 0;
+    list-style: none;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+html, body, main {
+    height: 100%;
+}
+
+html {
+    font-size: 1.2rem;
+}
+
+
+.header_nav{
+    display: grid;
+    grid-template-columns: 8fr 1fr 1fr;
+    border: solid red;
+}
+
+.menu{
+
+    display: grid;
+    grid-template-rows: 1fr 1fr 8fr;
+    border: solid green;
+
+}
