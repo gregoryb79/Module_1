@@ -1,0 +1,211 @@
+// Screen Brakpoints:
+$break_point_medium: 50rem;
+$break_point_small: 35rem;
+
+//Items Parameters
+// $menu_width: 6.5rem;
+$header_height: 2rem;
+$hamburger_size: 50px;
+$gap: 15px;
+
+//Default parameters
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+ul, ol, menu {
+    padding: 0;
+    list-style: none;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+html, body, main {
+    height: 100%;
+}
+
+html {
+    font-size: 1.2rem;
+}
+
+
+body {
+    font-family: system-ui;
+    line-height: 1.5;
+    color: hsl(0deg 0% 5%);
+
+    //Making the grid for th whole page
+    //First row heght = header height
+    //Second row height = "hamburger size + margins", in order to prepeare it for folded horisontal menu
+    //First two columns are "hamburger size + margins", so the wide manu takes 2 columns of fixed width
+    //and the narrow menu ("hamburger" only) takes 1 column.
+    display: grid;
+    grid-template: $header_height calc(#{$hamburger_size} + #{$gap}) repeat(10, 1fr) / repeat(2, calc(#{$hamburger_size} + #{$gap})) repeat(10, 1fr);
+      
+    border: 1px solid grey;
+    border-radius: 25px;
+
+    margin: 0 0.2rem 0 0.2rem;
+
+}
+
+header{
+    border-bottom: 1px solid gray;
+    //Putting header in the first row, whole width
+    grid-area: 1 / 1 / 2 / 13;
+   
+    .header_nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+        
+        //moving all the items but first to the right
+        > li:first-child{
+            margin-right: auto;
+            margin-left: 1rem;
+        }
+    
+        > li:last-child{
+            margin-right: 1rem;
+        }
+    }
+}
+
+.toggle{
+    grid-area: 2 / 1 / 3 / 2;
+    opacity: 0;
+
+    //To make cursor = pointer when "hamburger" appears.
+    @media  screen and (max-width: $break_point_medium) {
+        cursor: pointer;
+    }
+}
+
+.menu{   
+    border-right: 1px solid grey;
+    grid-area: 2 / 1 / 13 / 3;
+
+    .responsive_hamburger{
+       width: $hamburger_size;
+       aspect-ratio: 1;
+       border: 1px solid grey;
+       border-radius: 5px;
+       background-color: white;
+       opacity: 0; //"hamburger hidden at the default state
+    }
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    > li:last-child{ //Moving the last item to the bottom
+        margin-top: auto;
+        margin-bottom: 1rem;
+    }
+
+    > li:first-child{
+        margin-top: 5px;
+    }
+    li{
+        margin-left: 1rem;
+    }
+
+    @media  screen and (max-width: $break_point_medium) {
+
+        //Making the menu narrow (1 column only)
+        grid-area: 2 / 1 / 13 / 2;
+
+        > li:not(:first-child){ //hiding all but first item == "hamburger"
+            opacity: 0;
+        }
+        > li:first-child{
+            margin-left: calc(#{$gap}/2);
+        } 
+        .responsive_hamburger{ //Showing the "hamburger"
+            opacity: 100;            
+        }
+        .toggle_label{ //To make cursor = pointer
+            opacity: 100;
+            cursor: pointer;
+        }                
+        
+        
+    }
+
+    @media screen and (max-width: $break_point_small) {
+        grid-area: 2 / 1 / 3 / 13;  
+        flex-direction: row;
+        align-items: center; 
+
+        border-bottom: 1px solid gray;
+        border-right: 0;
+
+        > li:first-child{
+            margin-left: 5px;
+        }   
+
+        .toggle_label{ //To make cursor = pointer
+            opacity: 100;
+            cursor: pointer;
+        }         
+    }
+
+}
+
+main{    
+    //Putting the main from second row third column to the ends of the page
+    grid-area: 2 / 3 / 13 / 13;
+    margin: 0;
+    
+
+    @media screen and (max-width: $break_point_medium) {
+        grid-area: 2 / 2 / 13 / 13;  //letting main catch the second column as the menu gets narrow
+    }
+
+    @media screen and (max-width: $break_point_small) {
+        grid-area: 3 / 1 / 13 / 13; //moving the main to the third row and whole width as the menu gets under the header         
+    }
+}
+
+.toggle:checked + .menu {
+    
+    //Showing the whole menu, and restorin to original position
+    > * {
+         opacity: 100;
+    }
+    align-items: start;
+    grid-area: 2 / 1 / 13 / 3;
+
+    > li:not(:first-child){
+        margin-left: 1rem;
+    }
+
+    @media screen and (max-width: $break_point_small) {
+        //Showing the whole menu, and restorin to original position from the horisontal variant
+        flex-direction: column;
+        gap: 0.5rem;
+        grid-area: 2 / 1 / 13 / 3;
+        border-bottom: 0;
+        border-right: 1px solid grey;
+    }
+}
+
+.toggle:checked ~ .main_body{
+    //moving the main to origina position when the menu appears at full size
+    grid-area: 2 / 3 / 13 / 13;  
+}
+
+p{
+    margin: 1rem;
+    overflow: auto; //in order to have a scroll bar when the contents is loo large
+    max-height: 95%; //so the scroll bar will appear within the page size
+}
+
