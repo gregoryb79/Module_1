@@ -169,7 +169,7 @@ main {
   }
 }
 
-.toggle:checked ~ .main_body {
+.toggle:checked ~ main {
   grid-area: 2/3/13/13;
 }
 

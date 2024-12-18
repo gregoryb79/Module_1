@@ -54,11 +54,11 @@ body {
 
     margin: 0 0.2rem 0 0.2rem;
 
+    //Preferred color schemes support
     @media (prefers-color-scheme: light) {
         background-color: white;
         color: hsl(0deg 0% 5%);
-    }
-    
+    }  
     @media (prefers-color-scheme: dark) {
         background-color: black;
         color: seashell;
@@ -146,8 +146,7 @@ header{
             opacity: 100;
             cursor: pointer;
         }                
-        
-        
+                
     }
 
     @media screen and (max-width: $break_point_small) {
@@ -165,9 +164,9 @@ header{
         .toggle_label{ //To make cursor = pointer
             opacity: 100;
             cursor: pointer;
-        }         
+        }      
+                
     }
-
 }
 
 main{    
@@ -206,9 +205,10 @@ main{
         border-bottom: 0;
         border-right: 1px solid grey;
     }
+    
 }
 
-.toggle:checked ~ .main_body{
+.toggle:checked ~ main{
     //moving the main to origina position when the menu appears at full size
     grid-area: 2 / 3 / 13 / 13;  
 }
