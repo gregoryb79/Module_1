@@ -27,12 +27,23 @@ html {
 body {
   font-family: system-ui;
   line-height: 1.5;
-  color: #0d0d0d;
   display: grid;
   grid-template: 2rem calc(50px + 15px) repeat(10, 1fr)/repeat(2, calc(50px + 15px)) repeat(10, 1fr);
   border: 1px solid grey;
   border-radius: 25px;
   margin: 0 0.2rem 0 0.2rem;
+}
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: white;
+    color: #0d0d0d;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: black;
+    color: seashell;
+  }
 }
 
 header {

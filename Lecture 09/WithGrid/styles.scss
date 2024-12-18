@@ -39,7 +39,7 @@ html {
 body {
     font-family: system-ui;
     line-height: 1.5;
-    color: hsl(0deg 0% 5%);
+    
 
     //Making the grid for th whole page
     //First row heght = header height
@@ -53,6 +53,16 @@ body {
     border-radius: 25px;
 
     margin: 0 0.2rem 0 0.2rem;
+
+    @media (prefers-color-scheme: light) {
+        background-color: white;
+        color: hsl(0deg 0% 5%);
+    }
+    
+    @media (prefers-color-scheme: dark) {
+        background-color: black;
+        color: seashell;
+    }
 
 }
 
