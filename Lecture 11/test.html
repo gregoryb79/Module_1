@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details Menu Animation Test with Keyframes</title>
+    <style>
+        details {
+            display: block;
+            position: relative;
+            margin: 20px;
+        }
+
+        summary {
+            cursor: pointer;
+        }
+
+        .overlay-menu {
+            position: absolute;
+            top: 2rem;
+            right: 0;
+            width: 5rem;
+            max-height: 0; /* Initially collapsed */
+            visibility: hidden; /* Initially hidden */
+            opacity: 0; /* Initially invisible */
+            background-color: lightblue;
+            overflow: hidden;
+            transition: opacity 0.3s ease-out; /* Smooth opacity transition */
+        }
+
+        /* Keyframe for opening the details */
+        @keyframes openMenu {
+            0% {
+                max-height: 0;
+                visibility: hidden;
+                opacity: 0;
+            }
+            100% {
+                max-height: 15rem; /* Adjust height */
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+
+        /* Apply animation when details are open */
+        details[open] .overlay-menu {
+            animation: openMenu 3s ease-out forwards; /* Trigger keyframe animation */
+        }
+
+        /* Keyframe for closing the details */
+        @keyframes closeMenu {
+            0% {
+                max-height: 15rem; /* Starting state */
+                visibility: visible;
+                opacity: 1;
+            }
+            100% {
+                max-height: 0;
+                visibility: hidden;
+                opacity: 0;
+            }
+        }
+
+        /* Apply animation when details are closed */
+        details:not([open]) .overlay-menu {
+            animation: closeMenu 3s ease-in forwards; /* Trigger keyframe animation */
+        }
+        
+    </style>
+</head>
+<body>
+
+<details>
+    <summary>☰</summary>
+    <menu class="overlay-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about-us.html">About Us</a></li>
+    </menu>
+</details>
+
+</body>
+</html>
